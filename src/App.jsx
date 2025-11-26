@@ -1,22 +1,21 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
+import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const todos = [
+    { id: 1, title: 'review resources' },
+    { id: 2, title: 'take notes' },
+    { id: 3, title: 'code out app' },
+  ];
   return (
-    <>
-      <h1>CTD Lark</h1>
-      <div className="card">
-        <ul>
-          <li>Submit homework</li>
-          <li>Fix bugs</li>
-          <li>Learn about React</li>
-        </ul>
-      </div>
-    </>
+    <div>
+      <h1>My Todos</h1>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
